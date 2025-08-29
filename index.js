@@ -1,16 +1,15 @@
-// index.js
+
 import express from "express";
 
 const app = express();
 app.use(express.json());
 
-// Your details
 const FULL_NAME = "shreyash_bankar";
 const DOB = "22032004"; // ddmmyyyy
 const EMAIL = "shreyash@example.com";
 const ROLL_NUMBER = "22BCI0046";
 
-// Utility: alternating caps
+
 function alternatingCaps(str) {
   let result = "";
   for (let i = 0; i < str.length; i++) {
@@ -19,7 +18,6 @@ function alternatingCaps(str) {
   return result;
 }
 
-// API route
 app.post("/bfhl", (req, res) => {
   try {
     const { data } = req.body;
@@ -84,3 +82,4 @@ app.post("/bfhl", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(` Server running on port ${PORT}`));
+
